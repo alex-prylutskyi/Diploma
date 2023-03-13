@@ -1,4 +1,4 @@
-namespace WebApplication3
+namespace BookKing
 {
     public class WeatherForecast
     {
