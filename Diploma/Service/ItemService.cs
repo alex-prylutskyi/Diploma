@@ -8,16 +8,14 @@ namespace BookKing.Service
 {
     public class ItemService : IItemService
     {
-        private AccountService _accountService = new();
         private ItemRepository _itemRepository = new();
 
         public long CreateItem(ItemDto itemDto)
         {
-            _accountService.AddItem()
             return _itemRepository.UpsertItem((Item)itemDto);
         }
 
-        public IEnumerable<Item> GetItems()
+        public IEnumerable<Item> GetItems(ItemSearchFilters filters)
         {
             return _itemRepository.ReadItems();
         }

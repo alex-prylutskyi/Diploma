@@ -7,7 +7,7 @@ namespace BookKing.Service.Interfaces
     {
         public long CreateItem(ItemDto itemDto);
 
-        public IEnumerable<Item> GetItems();
+        public IEnumerable<Item> GetItems(ItemSearchFilters filters);
 
         public long UpdateItem(Item item);
 
