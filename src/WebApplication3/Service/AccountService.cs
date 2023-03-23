@@ -1,6 +1,6 @@
 ﻿namespace BookKing.Service
 {
-    public class AccountService
+    public class AccountService : IAccountService
     {
     }
 }
