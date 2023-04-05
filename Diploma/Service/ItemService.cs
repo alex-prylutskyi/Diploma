@@ -10,9 +10,9 @@ namespace BookKing.Service
     {
         private ItemRepository _itemRepository = new();
 
-        public long CreateItem(ItemDto itemDto)
+        public long CreateItem(Item item)
         {
-            return _itemRepository.UpsertItem((Item)itemDto);
+            return _itemRepository.UpsertItem(item);
         }
 
         public IEnumerable<Item> GetItems(ItemSearchFilters filters)

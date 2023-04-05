@@ -1,6 +1,8 @@
-﻿namespace BookKing.Service
+﻿using BookKing.Service.Interfaces;
+
+namespace BookKing.Service
 {
-    public class AccountService : IAccountService
+    public class AccountService
     {
     }
 }

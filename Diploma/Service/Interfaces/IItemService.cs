@@ -5,7 +5,7 @@ namespace BookKing.Service.Interfaces
 {
     public interface IItemService
     {
-        public long CreateItem(ItemDto itemDto);
+        public long CreateItem(Item item);
 
         public IEnumerable<Item> GetItems(ItemSearchFilters filters);
 

@@ -3,6 +3,7 @@ using BookKing.Models.Requests;
 using BookKing.DataTransfer;
 using BookKing.Service;
 using BookKing.Models;
+using BookKing.Service.Interfaces;
 
 namespace BookKing.Controllers
 {
@@ -14,9 +15,9 @@ namespace BookKing.Controllers
         //validating input data, and formatting responses.
         //This layer should not contain any business logic or data access logic.
 
-        private readonly ItemService _itemService;
+        private readonly IItemService _itemService;
 
-        public ItemController(ItemService itemService)
+        public ItemController(IItemService itemService)
         {
             _itemService = itemService;
         }
@@ -24,11 +25,11 @@ namespace BookKing.Controllers
         [HttpGet]
         public IActionResult GetAllItems()
         {
-            return Ok(new List<ItemDto>());
+            return Ok(_itemService.GetItems(new ItemSearchFilters()));
         }
 
         [HttpPost]
-        public IActionResult CreateItem(ItemDto item)
+        public IActionResult CreateItem(Item item)
         {
             return Ok(_itemService.CreateItem(item));
         }
